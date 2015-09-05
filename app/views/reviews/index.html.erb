@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+
+			<center>
+				<h1>Create a New Review!</h1>
+				<p>Authored by: <%= current_user[:first_name] %> | Posting in <%= @review.city.name %></p>
+			</center>
+
+			<%= form_for @review, url:{action: "create"}, class: "form-group" do |f|  %>
+
+			<%= f.label :title %>
+			<%= f.text_field :title, placeholder: "Title", class: "form-control", :required => true, :autofocus => true %><br>
+
+			<%= f.label :body %>
+			<%= f.text_area :body, placeholder: "Your Content Here", class: "form-control", :required => true %><br>
+
+			<%= f.text_field :city_id, placeholder: "City ID", class: "form-control", :required => true, type:"hidden" %><br>
+
+			<center>
+				<%= f.submit "Submit review", class: "btn btn-primary" %>
+			</center>
+			<% end %>
+				<% flash.each do |name, msg| -%>
+					<%= content_tag :div, msg, class: name %>
+				<% end -%>
+		</div>
+	</div>
+</div>

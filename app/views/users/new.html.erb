@@ -1,0 +1,40 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+
+			<center>
+				<h1>Sign up!</h1>
+			</center>
+			<%= form_for @user, url:{action: "create"}, :html => { :multipart => true }, class: "form-group" do |f|  %>
+
+			<%= f.label :first_name %>
+			<%= f.text_field :first_name, placeholder: "First Name", class: "form-control", :required => true, :autofocus => true %><br>
+
+			<%= f.label :last_name %>
+			<%= f.text_field :last_name, placeholder: "Last Name", class: "form-control", :required => true %><br>
+
+			<%= f.label :username %>
+			<%= f.text_field :username, placeholder: "Username", class: "form-control", :required => true %><br>
+
+			
+
+			<%= f.label :email %>
+			<%= f.text_field :email, placeholder: "Email", class: "form-control", :required => true %><br>
+
+			<%= f.label :password %>
+			<%= f.password_field :password, placeholder: "Password", class: "form-control", :required => true %><br>
+
+			<%= f.file_field :avatar %>
+
+			<center>
+				<%= f.submit "Create User", class: "btn btn-primary" %>
+			</center>
+
+			<% end %>
+			<% flash.each do |name, msg| -%>
+				<%= content_tag :div, msg, class: "alert #{name == 'error' ? 'alert-danger' : 'alert-notice'}" %>
+			<% end %>
+
+		</div>
+	</div>
+</div>

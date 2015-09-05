@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+
+			<center>
+				<h1>Edit your Review!</h1>
+				<p>Posting in <%= @review.city.name %></p>
+			</center>
+
+			<%= form_for @review, url:{action: "create"}, class: "form-group" do |f|  %>
+
+			<%= f.label :title %>
+			<%= f.text_field :title, placeholder: "Title", class: "form-control", :required => true, :autofocus => true %><br>
+
+			<%= f.label :body %>
+			<%= f.text_area :body, placeholder: "Your Content Here", class: "form-control", :required => true %><br>
+
+			
+
+			<center>
+				<%= f.submit "Submit Review", class: "btn btn-primary" %>
+			</center>
+			<% end %>
+		</div>
+	</div>
+</div>

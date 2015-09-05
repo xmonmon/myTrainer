@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="row">
+		<div class="col-sm-3">
+			<div class="panel panel-default">
+				<div class="panel-body" style="text-align:center">
+					<p><%= image_tag @user.avatar.url(:medium) %></p>
+				</div>
+			</div>	
+		</div>
+
+		<div class="col-sm-6">	
+			<div class="panel panel-default">
+				<div class="panel-body" >
+					<h1>Hi, <%= @user.full_name %></h1>
+						<strong><p>Current City: <%= @user.current_city %></p>
+						</strong> 
+						<p> you've been a member since: <%= @user.created_at %></p>	
+					<br>
+					<br>
+					<% @user.reviews.reverse.each do |review| %>
+							<h4 style="text-align:center"><a href="/reviews/<%= review.id %>" > <%= review.title %></a></h4><br>
+					<% end %>
+				</div>
+						
+			</div>
+		</div>
+	</div>	
+
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+			
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

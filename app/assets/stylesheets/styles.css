@@ -1,0 +1,64 @@
+head {
+  font-family: 'Lora', serif;
+}
+
+
+body {
+  background-color: #FFFFFF;
+  font-family: 'Lora', serif;
+
+}
+
+.navbar-default {
+    background-color: #EEEEEE;
+}
+
+
+.panel a {
+  color:black;
+}
+
+.comment{
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+footer {
+  position:relative;
+  bottom:0;
+  width: 100%;
+}
+
+
+.jumbotron{
+  background-size:cover;
+  background-repeat: no-repeat;
+
+  color:white;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.homepage {
+  background-color: #EEEEEE;
+}
+
+.jumbotron.homepage h1 {
+	text-align: center
+}
+
+.navbar {
+  margin-bottom:0; 
+}
+
+.navbar-brand {
+  padding: 0px;
+  padding-left: 5px;
+}
+
+
+
+
