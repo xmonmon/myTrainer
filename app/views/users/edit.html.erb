@@ -14,8 +14,13 @@
 			<%= f.label :last_name %>
 			<%= f.text_field :last_name, placeholder: "Last Name", class: "form-control", :required => true %><hr>
 
-			<%= f.label :current_city %>
-			<%= f.text_field :current_city, placeholder: "Current City", class: "form-control", :required => true %><hr>
+			<%= f.label :username %>
+			<%= f.text_field :username, placeholder: "Username", class: "form-control", :required => true %><hr>
+
+			<!-- here is where i need to add a city form -->
+			<%= f.text_field :city_id %>
+			<%= f.text_area :body, placeholder: "City", class: "form-control", :required => true, type:"hidden" %><br>
+			
 
 			<center>
 				<%= f.submit "Update User", class: "btn btn-primary" %>

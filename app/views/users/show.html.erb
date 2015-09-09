@@ -12,9 +12,8 @@
 			<div class="panel panel-default">
 				<div class="panel-body" >
 					<h1>Hi, <%= @user.full_name %></h1>
-						<strong><p>Current City: <%= @user.current_city %></p>
-						</strong> 
-						<p> you've been a member since: <%= @user.created_at %></p>	
+						 <p>you've been a member since: <%= @user.created_at %>
+						 </p>	
 					<br>
 					<br>
 					<% @user.reviews.reverse.each do |review| %>

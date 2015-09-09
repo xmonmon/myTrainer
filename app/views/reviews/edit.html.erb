@@ -4,7 +4,7 @@
 
 			<center>
 				<h1>Edit your Review!</h1>
-				<p>Posting in <%= @review.city.name %></p>
+				<p>Posting in <%= @reviews %></p>
 			</center>
 
 			<%= form_for @review, url:{action: "create"}, class: "form-group" do |f|  %>
@@ -15,7 +15,8 @@
 			<%= f.label :body %>
 			<%= f.text_area :body, placeholder: "Your Content Here", class: "form-control", :required => true %><br>
 
-			
+			<%= f.text_field :city_id %>
+			<%= f.text_area :body, placeholder: "City", class: "form-control", :required => true, type:"hidden" %><br>
 
 			<center>
 				<%= f.submit "Submit Review", class: "btn btn-primary" %>

@@ -11,17 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150903222654) do
+ActiveRecord::Schema.define(version: 20150908232746) do
+
+  create_table "cities", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "zip_code"
+    t.string   "name"
+  end
 
   create_table "comments", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "user_id"
+    t.string   "author"
+    t.string   "review_id"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.string   "username"
     t.string   "title"
     t.string   "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "user_id"
+    t.integer  "trainer_id"
+  end
+
+  create_table "trainers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -31,9 +48,16 @@ ActiveRecord::Schema.define(version: 20150903222654) do
     t.string   "last_name"
     t.string   "username"
     t.string   "email"
-    t.string   "password"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "password_digest"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "current_city"
+    t.string   "photo"
+    t.integer  "city_id"
   end
 
 end

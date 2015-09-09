@@ -1,11 +1,11 @@
 Have you ever trained with a Personal Trainer where you didn't get the bang for your buck? Well, you've come to the right place. Welcome to myTrainer, where not only can you review your trainer(s), but you can help them build their clientele.
 
-* Ruby version : 2.0.0
-
-
 Getting Started with seed Data
+To generate seed data:
+On your local terminal.
+Run rake db:migrate:reset and then rake db:seed. 
 
-On your local terminal. Run rake db:migrate:reset and then rake db:seed. This will generate some great seed data for you :)
+* Ruby version : 2.0.0
 
 
 

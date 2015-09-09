@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+   <div class="col-md-5">
+		<div class="thumbnail"> 
+			<center>
+				<%= image_tag @trainer.avatar.url(:medium) %>
+		    <h4><%= @trainer.name %> </h4>
+		    <p> you've been a member since: <%= @trainer.created_at %></p>
+	      <% if @trainer.user.id == session[:user_id] %>
+	 				<%= link_to "Edit Your Trainer Profile", edit_trainer_path, class: "btn btn-primary" %>
+	      <hr> 
+	      <% end %>
+      </center>
+		</div>
+  </div>
+  <div class="col-md-offset-5">
+  	<div class="thumbnail"> 
+    <center>		
+			<% if @trainer.reviews.any? %>
+				<h3>Reviews:</h3> <br>
+	    	<% @trainer.reviews.each do |review| %>
+	    	<div class="well">
+	  			<p>Description: <%= review.description %></p>
+  				<% if @trainer.user.id == session[:user_id] %>
+  					<%= link_to "Edit Issue", edit_trainer_review_path(@trainer, review) %>
+  				<% end %>
+  				<% if logged_in? %>
+  					<% if current_user.is_trainer == false %>
+  			 			<%= form_for :project, url: projects_path do |f| %>
+								<%= f.hidden_field :review_id, class: "form-control", value: review.id%>
+								<%= f.hidden_field :status, class: "form-control", value: "Pending"%>
+								<%= f.submit "Interested!", class: "btn btn-primary" %>
+           		<% end %>
+        		<% end %>
+        	<% end %>
+	  		</div>
+	  		<% end %>
+	  		<% if @trainer.user.id == session[:user_id] %>
+	  			<%= link_to "Add A Review", new_trainer_review_path(@trainer), class: "btn btn-primary" %>
+				<% end %>
+			<% else %>
+			<h3>No Reviews Currently Available</h3>
+           <% if @trainer.user.id == session[:user_id] %>
+          <%= link_to "Add A Review", new_trainer_review_path(@trainer), class: "btn btn-primary" %>
+        <% end %>
+	  	<% end %>
+      <center>  
+		</div>
+  </div>
+</div>

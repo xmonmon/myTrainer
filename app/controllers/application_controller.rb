@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
 		@current_user ||= User.find(session[:user_id]) if session[:user_id]
 	end
 
+	def current_trainer
+		@current_trainer ||= Trainer.find(session[:trainer_id]) if session[:trainer_id]
+	end
+
 	def authorize
 		unless current_user
 			redirect_to login_path

@@ -4,7 +4,10 @@
 
 			<center>
 				<h1>Create a New Review!</h1>
-				<p>Authored by: <%= current_user[:first_name] %> | Posting in <%= @review.city.name %></p>
+				<p>Authored by: <%= current_user[:first_name] %> | Posting in 
+					<%if current_user.reviews.any? %>
+					<%= @reviews %></p>
+					<%end%>
 			</center>
 
 			<%= form_for @review, url:{action: "create"}, class: "form-group" do |f|  %>
@@ -15,7 +18,6 @@
 			<%= f.label :body %>
 			<%= f.text_area :body, placeholder: "Your Content Here", class: "form-control", :required => true %><br>
 
-			<%= f.text_field :city_id, placeholder: "City ID", class: "form-control", :required => true, type:"hidden" %><br>
 
 			<center>
 				<%= f.submit "Submit review", class: "btn btn-primary" %>
