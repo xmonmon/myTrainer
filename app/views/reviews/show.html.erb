@@ -15,37 +15,18 @@
 			<div class="panel-body">
 				<h2><%= @review.title %>
 					<small> 				
-						<% if current_user && current_user[:id] == @review[:user_id] %>
+						<% if current_user == @review.user %>
 							<%= link_to "",  @review, class:"glyphicon glyphicon-remove pull-right",  method: :delete, data: { confirm: 'Are you sure?' } %> 
 							<%= link_to "", edit_review_path, class:"glyphicon glyphicon-pencil pull-right" %>
 						<% end %>
-						<%= link_to "", new_comment_path(@review), class:"glyphicon glyphicon-comment pull-right" %> 
+						 
 					</small>
 				</h2>
 					<p><%= @review.body %></p>
 					<br>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-sm-6 col-sm-offset-3">
-				<% if @review.comments.any? %>
-					<h3>Comments</h3>
-				<% end %>
-				<% @review.comments.reverse.each do |comment| %>
-					<div class="panel panel-default comment">
-						<div class="panel-body">
-							<h5><%= comment.author if comment.author %> says...<% if comment.user_id == current_user[:id] %>
-									<%= link_to "", "/reviews/#{@review.id}/comments/#{comment.id}/delete", class:"glyphicon glyphicon-remove pull-right" %>&nbsp;
-									<%= link_to "", "/reviews/#{@review.id}/comments/#{comment.id}/delete", class:"glyphicon glyphicon-pencil pull-right" %>
-									<% end %> </h5>
-							<p><%= comment.body %><br></p>
-								<p class="small"><%= comment.created_at.to_formatted_s(:long)%></p>
 
-						</div>
-					</div>
-				<% end %>
 
-			</div>
-		</div>
 	</div>
 </div>

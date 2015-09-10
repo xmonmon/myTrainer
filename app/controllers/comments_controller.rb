@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 	def new
     @review = Review.find_by_id(params[:id])
-    if current_user
+    if current_trainer
       @comment = Comment.new
     else
       redirect_to login_path
@@ -9,11 +9,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    if current_user
+    if current_trainer
       comment = Comment.new(comment_params)
       comment.review_id = params[:id]
-      comment.user_id = session[:user_id]
-      comment.author = current_user.full_name
+      comment.trainer_id = session[:trainer_id]
+      comment.author = current_trainer.full_name
       comment.save
       redirect_to review_path(params[:id])
     else

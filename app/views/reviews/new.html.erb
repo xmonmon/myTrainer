@@ -8,13 +8,13 @@
 					<%= @review %></p>
 			</center>
 
-			<%= form_for @review, url:{action: "create"}, class: "form-group" do |f|  %>
+			<%= form_for @review, url:{action: "create"}, class: "form-group" do |review|  %>
 
 			<%= f.label :title %>
 			<%= f.text_field :title, placeholder: "Title", class: "form-control", :required => true, :autofocus => true %><br>
 
 			<%= f.label :body %>
-			<%= f.text_area :body, placeholder: "Your Thoughts Here", class: "form-control", :required => true %><br>
+			<%= f.text_area :body, placeholder: "What's On Your Mind?", class: "form-control", :required => true %><br>
 			<br>
 
 			<center>

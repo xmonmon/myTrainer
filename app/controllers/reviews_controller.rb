@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 	  def new
     if current_user
       # review = review.new(review_params)
-      @reviews = review.new(review_params)
+      @reviews = Review.new(review_params)
       @review.user_id = params[:id]
     else
       redirect_to login_path
