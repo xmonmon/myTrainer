@@ -1,14 +1,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-
 			<center>
-				<h1>Create a New Review!</h1>
+				<h3>Create a New Review!</h3>
 				<p>Authored by: <%= current_user[:first_name] %> | Posting in 
-					<%= @review %></p>
+				<%= @review %></p>
 			</center>
 
-			<%= form_for @review, url:{action: "create"}, class: "form-group" do |review|  %>
+			<%= form_for @review, url:{action: "create"}, class: "form-group" do |f|  %>
 
 			<%= f.label :title %>
 			<%= f.text_field :title, placeholder: "Title", class: "form-control", :required => true, :autofocus => true %><br>

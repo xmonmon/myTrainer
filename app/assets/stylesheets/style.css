@@ -2,17 +2,85 @@ head {
   font-family: 'Lora', serif;
 }
 
+#bs-example-navbar-collapse-1 > ul:nth-child(1) > li > a {
+  font-size: 20px;
+}
+
+ul.nav.navbar-nav {
+  font-size: 50px;
+}
+
+body > div.jumbotron.homepage > div > div > div > div > h7 > a {
+  font-size: 20px;
+}
+
+body > div > div > div.col-md-5 > div > center:nth-child(1) > p {
+  font-size: 20px;
+}
+
+body > div.container > div > div.col-md-5 > div > center:nth-child(2) > h3 > a {
+  font-size: 24px;
+}
+
+body > div.container > div > div.col-md-offset-5 > div > center > div:nth-child(2) > h5:nth-child(1) {
+  font-size: 20px;
+}
+
+body > div.container > div > div.col-md-offset-5 > div > center > div:nth-child(2) > p:nth-child(2) {
+  font-size: 18px;
+}
+
+body > div.container > div > div.col-md-offset-5 > div > center > div:nth-child(2) > p:nth-child(3) {
+  font-size: 18px;
+}
+
+body > div.container > div > div.col-md-offset-5 > div > center > div:nth-child(2) > p:nth-child(6) {
+  font-size: 18px;
+}
+
+body > div.container > div > div.col-md-offset-5 > div > center > div:nth-child(2) > p:nth-child(7) {
+  font-size:  18px;
+}
+
+body > div.container > div > div.col-md-offset-5 > div > center > div:nth-child(2) > p:nth-child(8) {
+  font-size: 18px;
+}
+
+body > div.container > div > div.col-md-offset-5 > div > center > div:nth-child(3) > p:nth-child(2) {
+  font-size: 18px;
+}
+
+body > div.container > div > div.col-md-offset-5 > div > center > div:nth-child(3) > p:nth-child(3) {
+  font-size: 18px;
+}
+
+body > div.container > div > div.col-md-offset-5 > div > center > div:nth-child(3) > p:nth-child(6) {
+  font-size: 18px;
+}
+
+a.dropdown-toggle {
+  font-size: 20px;
+}
 
 body {
-  background-color: #FFFFFF;
+  background-color: #DDE0CD;
   font-family: 'Lora', serif;
+  color: #393939;
+  font-size: 12px;
+}
 
+body > div > div > div.col-sm-6 > div > div > center > p {
+  font-size: 20px;
 }
 
 .navbar-default {
-    background-color: #EEEEEE;
+    background-color: #DDE0CD;
+    font-size: 200px;
 }
 
+.review {
+  background-color: #DDE0CD;
+}
 
 .panel a {
   color:black;
@@ -43,22 +111,22 @@ footer {
 }
 
 .homepage {
-  background-color: #EEEEEE;
+  background-color: #DDE0CD;
+  font-size: 12px;
 }
 
 .jumbotron.homepage h1 {
-	text-align: center
+	text-align: center;
 }
 
 .navbar {
-  margin-bottom:0; 
+  margin-bottom: 0;
 }
 
 .navbar-brand {
   padding: 0px;
-  padding-left: 5px;
 }
 
-
-
-
+body > div.container > footer > div > div > div > div {
+  font-size: 18px;
+}

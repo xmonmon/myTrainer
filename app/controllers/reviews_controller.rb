@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
 	  def new
     if current_user
       # review = review.new(review_params)
-      @reviews = Review.new(review_params)
+      @review = Review.new
       @review.user_id = params[:id]
     else
       redirect_to login_path
@@ -11,18 +11,14 @@ class ReviewsController < ApplicationController
 
   def create
     if current_user
-      review = review.new(review_params)
+      review = Review.new(review_params)
 
-      if user.exists?(review[:user_id])
-        review.user_id = session[:user_id]
         if review.save
-          redirect_to "/users/#{review.user_id}"
+          redirect_to "/reviews/#{current_user[:id]}"
         else
           redirect_to new_review_path(review[:user_id]), notice: "hey, your title is a bit too long"
         end
-      else
-        redirect_to root_path
-      end
+    
 
     else
       redirect_to login_path

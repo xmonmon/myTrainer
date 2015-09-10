@@ -21,8 +21,8 @@ patch "/trainers/:id", to: "trainers#update", as: "update_trainer"
 delete "/trainers/:id", to: "trainers#destroy", as: "delete_rainer"
 
 # REVIEWS routes
-get "/reviews/:id/new", to: "reviews#new", as:"new_post"
-delete "/reviews/:id", to: "reviews#destroy", as: "delete_post"
+get "/reviews/new", to: "reviews#new", as:"new_review"
+delete "/reviews/:id", to: "reviews#destroy", as: "delete_review"
 resources :reviews, except: [:new, :destroy]
 
 get "/reviews", to: "reviews#index"

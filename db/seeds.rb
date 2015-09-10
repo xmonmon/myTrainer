@@ -28,11 +28,11 @@ Review.create(username: "adamb", title: "another one", body: "this is a review",
 Review.create(username: "briannav", title: "another one", body: "this is a review", user_id: "4", trainer_id: "4")
 Review.create(username: "alip", title: "another one", body: "this is a review", user_id: "5", trainer_id: "5")
 
-City.create(name: "San Francisco", zip_code: "94101")
-City.create(name: "Newark", zip_code: "94560")
-City.create(name: "Fremont", zip_code: "94536")
-City.create(name: "Union City", zip_code: "94587")
-City.create(name: "Mountain View", zip_code: "94041")
+City.create(city_name: "San Francisco", zip_code: "94101")
+City.create(city_name: "Newark", zip_code: "94560")
+City.create(city_name: "Fremont", zip_code: "94536")
+City.create(city_name: "Union City", zip_code: "94587")
+City.create(city_name: "Mountain View", zip_code: "94041")
 
 Comment.create(body: "this is a comment", trainer_id: "1", review_id: "1")
 Comment.create(body: "this is a comment", trainer_id: "2", review_id: "2")
