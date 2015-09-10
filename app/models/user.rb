@@ -3,14 +3,13 @@ class User < ActiveRecord::Base
   # has_many :reviews, foreign_key "trainer_id"
   belongs_to :city
   has_secure_password
-   validates_presence_of :password_confirmation
   validates :email, uniqueness: true
   has_many :comments
   has_attached_file :avatar,
   					:styles => { :medium => "150x150>", :thumb => "44x44>"},
   					:default_url => "http://www.psdgraphics.com/file/male-silhouette.jpg"
 
-  validates_attachment :avatar, :presence => true,
+  validates_attachment :avatar,
   					   :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"]},
   					   :size => { :in => 0..10.kilobytes }
 

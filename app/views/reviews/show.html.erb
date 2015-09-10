@@ -7,7 +7,7 @@
 				    <a href="/users/<%= @review.user.id %>" >
 				    <h5>Authored by: <%= @review.user.first_name %> </h5></a><br>
 				    <p><%= image_tag @review.user.avatar.url(:thumb) %></p>
-				    <p>Location: <br> <a href="/reviews/<%= @review.user.id %>"</a> <%= @review.user.name %></p> 
+				    <p>Location: <br> <a href="/reviews/<%= @review.user.id %>"</a> <%= @review.user.full_name %></p> 
 				  </div> 
 			</div>
 		</div>

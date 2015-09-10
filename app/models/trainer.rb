@@ -1,12 +1,12 @@
 class Trainer < ActiveRecord::Base
 	has_many :reviews
-	belongs_to :user
-
+  has_secure_password
+  validates :email, uniqueness: true  
 	has_attached_file :avatar,
   					:styles => { :medium => "150x150>", :thumb => "44x44>"},
-  					:default_url => "http://www.psdgraphics.com/file/male-silhouette.jpg"
+  					:default_url => "http://png.clipart.me/graphics/thumbs/171/businessman-avatar-profile-picture_171438758.jpg"
 
-    validates_attachment :avatar, :presence => true,
+    validates_attachment :avatar,
   					   :content_type => { :content_type => ["image/jpeg", "image/gif", "image/png"]},
   					   :size => { :in => 0..10.kilobytes }
 

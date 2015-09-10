@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150908232746) do
+ActiveRecord::Schema.define(version: 20150910014041) do
 
   create_table "cities", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -26,21 +26,36 @@ ActiveRecord::Schema.define(version: 20150908232746) do
     t.string   "user_id"
     t.string   "author"
     t.string   "review_id"
+    t.string   "body"
+    t.string   "title"
   end
 
   create_table "reviews", force: :cascade do |t|
     t.string   "username"
     t.string   "title"
     t.string   "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "user_id"
     t.integer  "trainer_id"
+    t.string   "description"
   end
 
   create_table "trainers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "current_city"
+    t.string   "photo"
+    t.integer  "city_id"
+    t.string   "avatar_file_name"
+    t.integer  "avatar_file_size"
+    t.integer  "avatar_updated_at"
+    t.string   "avatar_content_type"
   end
 
   create_table "users", force: :cascade do |t|

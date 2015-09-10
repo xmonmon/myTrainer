@@ -1,33 +1,8 @@
-<div class="signuppage">
+<div class="col-sm-4 col-sm-offset-4">
 
-  <div class="col-sm-6 col-sm-offset-3">
-  <br>
-    <div class="signupbox">
-      <legend>Add Your Trainer</legend>
+    <center>
+		<h1>Sign Up!</h1>
+	</center>
+	<%= render 'form' %>
 
-
-      <%= form_for @trainer do |f| %>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, placeholder: "Trainer's First Name", class: "form-control", :required => true, :autofocus => true %><hr>
-
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, placeholder: "Trainer's Last Name", class: "form-control", :required => true %><hr>
-
-      <%= f.label :username %>
-      <%= f.text_field :username, placeholder: "Trainer's Username", class: "form-control", :required => true %><hr>
-
-      <!-- here is where i need to add a city form -->
-      <%= f.text_field :city_id %>
-      <%= f.text_area :body, placeholder: "City", class: "form-control", :required => true, type:"hidden" %><br>
-
-
-      <%= f.label :avatar, "Trainer's Profile Image" %>:
-      <%= f.file_field :avatar %> 
-
-
-        <br>
-        <%= f.submit "Add Your Trainer!", class:"btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
 </div>

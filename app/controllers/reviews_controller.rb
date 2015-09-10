@@ -31,18 +31,18 @@ class ReviewsController < ApplicationController
   end
 
   def show
-    @review = review.find_by_id(params[:id])
+    @review = Review.find_by_id(params[:id])
   end
 
   def edit
-    @review = review.find_by_id(params[:id])
-    unless current_user && current_user[:id] == @review[:user_id] 
+    @review = Review.find_by_id(params[:id])
+    unless current_user && current_user == @review.user
       redirect_to root_path
     end
   end
 
   def update
-    review = review.find_by_id(params[:id])
+    review = Review.find_by_id(params[:id])
     if current_user && current_user[:id] == review[:user_id]
       review.update_attributes(review_params)
       redirect_to "/reviews/#{review[:id]}"
@@ -52,7 +52,7 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    review = review.find_by_id(params[:id])
+    review = Review.find_by_id(params[:id])
     if current_user && current_user[:id] == review[:user_id]
       review.destroy
       redirect_to "/reviews/#{session[:user_id]}"

@@ -17,9 +17,16 @@
 			<%= f.label :username %>
 			<%= f.text_field :username, placeholder: "Username", class: "form-control", :required => true %><hr>
 
+			<%= f.label :email %>
+			<%= f.text_field :email, placeholder: "Email", class: "form-control", :required => true %><br>
+
 			<!-- here is where i need to add a city form -->
-			<%= f.text_field :city_id %>
-			<%= f.text_area :body, placeholder: "City", class: "form-control", :required => true, type:"hidden" %><br>
+			<%= f.label :password %>
+			<%= f.password_field :password, placeholder: "Password", class: "form-control", :required => true %><br>
+
+			<%= f.label :profile_image %>
+			<%= f.file_field :avatar %>
+			
 			
 
 			<center>
